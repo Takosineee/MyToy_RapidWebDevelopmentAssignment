@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block main %}
+<!--start result-->
+<div class="row mt-5">
+    <div class="col-12 text-center d-flex justify-content-between">
+        <h5>{{key}}</h5>
+    </div>
+</div>
+<div class="product row">
+{% if blindboxes %}
+    {% for blindbox in blindboxes %}
+    <div class="col-lg-3 col-md-3 col-sm-6 col-6 py-2">
+        <div class="card">
+            <a href="{{url_for('main.blindbox', blindbox_id=blindbox.id)}}" class="item-link">
+                <div class="card-img">
+                    <img src="{{url_for('static', filename='img/' + blindbox.image)}}" class="card-img-top" alt="..." />
+                </div>
+
+                <div class="card-body">
+
+                    <h6 class="card-title">
+                        {{blindbox.name}}
+                    </h6>
+
+                </div>
+            </a>
+            <div class="card-text-container"><span class="card-text">{{"$%.2f"|format(blindbox.price)}}</span>
+                <form action="{{url_for('main.order')}}">
+                    <input type="hidden" id="blindbox_id" name="blindbox_id" value="{{blindbox.id}}">
+                    <input type="hidden" id="quantity" name="quantity" value="1">
+                    <button type="submit" title="Add to basket" href="#" class="btn btn-sm btn-custom">
+                        <i class="bi bi-cart-plus-fill"></i>
+                    </button>
+                </form>
+                
+            </div>
+        </div>
+    
+    </div>
+    {% endfor %}
+{% else %}
+    <div class="col-lg-3 col-md-3 col-sm-6 col-6 py-2">
+        <h6>No items found.</h6>
+    </div>
+{% endif %}
+</div>
+<!--end result-->
+{% endblock %}

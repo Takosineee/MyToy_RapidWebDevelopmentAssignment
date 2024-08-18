@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block head %}
+
+{% endblock %}
+{% block main %}
+<div class="jumbotron jumbotron-fluid card-img img-fluid"
+    style="background-image: url({{url_for('static', filename='img/header_.jpg')}});">
+    <div class="container" style="color: #272727;">
+        <h1>Welcome to My Toy!</h1>
+        <p>Enjoy purchasing our collection of well-designed figures in "Blind Boxes".</p>
+    </div>
+</div>
+<!--start new-->
+<div class="row mt-5">
+    <div class="col-lg-2 col-md-3 col-sm-4 text-left">
+        <h5>New Arrivals</h5>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-5 text-left">
+        <h6>{{month}}</h6>
+    </div>
+    <div class="col-lg-7 col-md-5 col-sm-3">
+    </div>
+</div>
+<div class="product row">
+    {% for b in blindboxes %}
+    <div class="col-lg-3 col-md-3 col-sm-6 col-6 py-2">
+        <div class="card">
+            <a href="{{url_for('main.blindbox', blindbox_id=b.id)}}" class="item-link">
+                <div class="card-img">
+                    <img src="{{url_for('static', filename='img/' + b.image)}}" class="card-img-top" alt="..." />
+                </div>
+
+                <div class="card-body">
+
+                    <h6 class="card-title">
+                        {{b.name}}
+                    </h6>
+
+                </div>
+            </a>
+            <div class="card-text-container">
+                <span class="card-text">{{"$%.2f"|format(b.price)}}</span>
+                <form action="{{url_for('main.order')}}">
+                    <input type="hidden" name="blindbox_id" value="{{b.id}}">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" title="Add to basket" href="#" class="btn btn-sm btn-custom">
+                        <i class="bi bi-cart-plus-fill"></i>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+<!--end new-->
+{% endblock %}

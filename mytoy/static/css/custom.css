@@ -1,0 +1,105 @@
+body {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+}
+.dropdown-item:hover{
+    background-color: #ffb7a571;
+}
+h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+p{
+    margin-bottom: 0.5rem;
+}
+.basket-link {
+    color:#434343;
+    padding: 6px;
+    width: 60px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #434343!important;
+    
+}
+.basket-link:hover {
+    color: #fe907296;
+    border: 1px solid #fe907296!important;
+}
+
+.product .card {
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 15px;
+    margin-bottom: 5%;
+    height:100%;
+}
+.product .card-img {
+    width: 100%; height: auto;
+    padding: 8%;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+}
+.product .card-img-top {
+    border-radius: 0;
+    width: 100%; height: auto;
+}
+.product .card-body {
+    padding: 0 8%;
+    height:70px;
+}
+
+.product .card-text-container {
+    height: auto;
+    padding:0 8%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-custom {
+    background-color: #121212d9;
+    color: #fff;
+}
+.btn-custom:hover {
+    background-color: #fe907296;
+    color: #fff;
+}
+.item-link {
+    color: #121212d9;
+}
+.item-link:hover {
+    color: #fe9072cf;
+    text-decoration: none;
+}
+.series-link{
+    color: #fe9072cf;
+}
+.series-link:hover{
+    color: #fe9072cf;
+    text-decoration: underline;
+}
+.description{
+    color: #000;
+    border: 0;
+    background: none;
+}
+.series-logo{
+    width:25%;
+    padding: 3%;
+}
+.btn-link-custom{
+    color: #434343;
+}
+.btn-link-custom:hover{
+    color: #fe9072cf;
+    text-decoration: underline;
+}
+.border-custom{
+    border-color: #434343;
+}
+.border-custom:hover{
+    border-color: #fe9072cf;
+}
+.logo{
+    width:55px;
+}
